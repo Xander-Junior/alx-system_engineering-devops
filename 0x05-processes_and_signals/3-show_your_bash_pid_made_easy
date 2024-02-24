@@ -5,7 +5,7 @@ for pid in /proc/[0-9]*; do
   if [ -f "$pid/comm" ]; then
     comm=$(cat "$pid/comm")
     if [[ $comm == *bash* ]]; then
-      echo "$(basename :$pid") $comm"
+      echo "$(basename "$pid") $comm"
     fi
   fi
 done
